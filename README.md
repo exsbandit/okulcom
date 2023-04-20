@@ -21,6 +21,8 @@ Start the PHP built-in web server by running php artisan serve in the project ro
 
 Now you can test the API endpoints by sending HTTP requests to default http://localhost:8000/. You can use a tool like Postman or cURL to send requests.
 
+**Postman Collection added to files, you can import for it to postman for easy to use !!**
+
 **That project use Bearer Token for API Request**
 
 Here are some example requests:
