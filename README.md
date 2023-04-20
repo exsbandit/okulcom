@@ -35,6 +35,16 @@ POST /api/user/register
     "password": "a123456"
 }
 ```
+**Login with user**
+
+POST /api/auth/token
+``` JSON
+{
+    "username": "erdem@gmail.com",
+    "password": "a123456"
+}
+```
+
 **Add detail to user**
 
 POST /api/v1/user/detail
