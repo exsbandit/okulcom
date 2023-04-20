@@ -8,7 +8,6 @@ use App\Http\Requests\v1\Category\CategoryIndexRequest;
 use App\Http\Requests\v1\Category\CategoryShowRequest;
 use App\Http\Requests\v1\Category\CategoryStoreRequest;
 use App\Http\Requests\v1\Category\CategoryUpdateRequest;
-use App\Http\Resources\v1\Category\CategoryIndexResource;
 use App\Models\Category;
 use App\Services\v1\Category\CategoryService;
 use Illuminate\Http\JsonResponse;
@@ -26,14 +25,13 @@ class CategoryController extends Controller
         $this->categories = $categories;
     }
 
-
     /**
      * @param CategoryIndexRequest $request
      * @return JsonResponse
      */
     public function index(CategoryIndexRequest $request): JsonResponse
     {
-        return Response::run(CategoryIndexResource::collection($this->categories->repository->get()));
+        return Response::run($this->categories->repository->get());
     }
 
     public function store(CategoryStoreRequest $request): JsonResponse

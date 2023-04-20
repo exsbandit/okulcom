@@ -66,5 +66,16 @@ Route::middleware('auth:api')->prefix('v1')->group(function () {
                 });
             });
         });
+
+    Route::prefix('/category')
+        ->controller(v1\CategoryController::class)
+        ->group(function () {
+            Route::get('/', 'index');
+            Route::get('/{category}', 'show');
+            Route::middleware(['role:admin,moderator'])->group(function () {
+                Route::post('/', 'store');
+                Route::put('/{category}', 'update');
+            });
+        });
 });
 
